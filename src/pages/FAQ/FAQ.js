@@ -5,9 +5,7 @@ const FAQ = () => {
   return (
     <section>
       <div>
-        <h2 className="text-center fw-bold fs-2 my-4">
-          Frequently Asked Questions
-        </h2>
+        <h2 className="text-center fw-bold my-4">Frequently Asked Questions</h2>
         <p className="text-center w-75 mx-auto fs-5 text-secondary">
           There are some important questions with answers these are taken from
           our site visitors & new learners and these questions' solution are

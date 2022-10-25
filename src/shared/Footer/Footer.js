@@ -11,8 +11,8 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <section className="container-fluid " style={{ marginTop: "3rem" }}>
-      <footer className="bg-light py-4">
+    <section style={{ marginTop: "3rem" }}>
+      <footer className="bg-light py-3">
         <div className="text-center py-3">
           <div>
             <p>Get connected with us </p>
@@ -40,7 +40,7 @@ const Footer = () => {
             <Col className="text-center my-auto h-100">
               <Link
                 to="/"
-                className="text-decoration-none fw-bold text-dark fs-3 "
+                className="text-decoration-none fw-bold text-dark fs-3"
               >
                 <img
                   src="https://i.ibb.co/w4ZYc0V/HC-logo.png"

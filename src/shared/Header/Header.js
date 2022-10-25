@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import Swal from "sweetalert2";
 import { Button } from "react-bootstrap";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
@@ -10,6 +11,7 @@ const Header = () => {
   const [theme, setTheme] = useState(false);
 
   const toggleTheme = () => {
+    Swal.fire("We will add this feature soon...");
     setTheme(!theme);
   };
   return (
@@ -19,15 +21,18 @@ const Header = () => {
         bg="light"
         variant="light"
         expand="lg"
-        className="my-auto h-100 py-4"
+        className="my-auto h-100 py-3"
       >
         <Container>
           <Navbar.Brand>
-            <Link to="/" className="text-decoration-none fw-bold text-dark">
+            <Link
+              to="/"
+              className="text-decoration-none fw-bold text-dark d-flex align-items-center"
+            >
               <img
                 src="https://i.ibb.co/w4ZYc0V/HC-logo.png"
-                width="30"
-                height="30"
+                width="40"
+                height="40"
                 className="d-inline-block align-top"
                 alt=""
               />
