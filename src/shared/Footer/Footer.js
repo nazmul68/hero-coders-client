@@ -82,7 +82,7 @@ const Footer = () => {
           </Row>
         </div>
         <div>
-          <p className="text-center mt-4">
+          <p className=" mb-0 text-center mt-3">
             © 2022 Copyright & all right reserved : HeroCoders
           </p>
         </div>
