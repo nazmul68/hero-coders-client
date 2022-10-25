@@ -31,7 +31,9 @@ const Home = () => {
           />
         </Carousel.Item>
       </Carousel>
-      <About></About>
+      <div>
+        <About></About>
+      </div>
     </div>
   );
 };

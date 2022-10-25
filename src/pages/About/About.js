@@ -4,7 +4,7 @@ import { FaGraduationCap, FaUserGraduate } from "react-icons/fa";
 
 const About = () => {
   return (
-    <Container className="mt-5">
+    <Container className="my-5">
       <Row>
         <Col>
           <h1 className="fs-1 fw-bold">
@@ -20,12 +20,12 @@ const About = () => {
           </p>
         </Col>
         <Col>
-          <div className="d-flex mt-4">
+          <div className="d-md-flex mt-4">
             <Card
-              style={{ width: "12rem", height: "12rem" }}
-              className="m-2 mx-auto "
+              style={{ width: "16rem", height: "16rem" }}
+              className="m-3 mx-auto border-0"
             >
-              <Card.Body>
+              <Card.Body className="bg-light shadow-sm rounded-2">
                 <FaGraduationCap className="fs-1 fw-bold text-info mx-auto w-100 my-2" />
                 <Card.Title className="text-primary text-center mt-3 mb-2">
                   Graduate Students
@@ -34,10 +34,10 @@ const About = () => {
               </Card.Body>
             </Card>
             <Card
-              style={{ width: "12rem", height: "12rem" }}
-              className="m-2 mx-auto"
+              style={{ width: "16rem", height: "16rem" }}
+              className="m-3 mx-auto border-0 "
             >
-              <Card.Body>
+              <Card.Body className="bg-light  shadow-sm rounded-2">
                 <FaUserGraduate className="fs-1 fw-bold text-info mx-auto w-100 my-3" />
                 <Card.Title className="text-primary text-center mt-3">
                   Expert Mentors
