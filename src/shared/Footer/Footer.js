@@ -18,20 +18,29 @@ const Footer = () => {
             <p>Get connected with us </p>
           </div>
           <div>
-            <a href="https://www.facebook.com/profile.php?id=100017560637039">
-              <FaFacebook className="text-dark fw-bold mx-2 fs-4"></FaFacebook>
+            <a
+              className="mx-3"
+              href="https://www.facebook.com/profile.php?id=100017560637039"
+            >
+              <FaFacebook className="text-info fw-bold  fs-3"></FaFacebook>
             </a>
-            <a href="https://www.linkedin.com/in/nazmul-sujon-39647b244/">
-              <FaLinkedinIn className="text-dark fw-bold mx-2 fs-4"></FaLinkedinIn>
+            <a
+              className="mx-3"
+              href="https://www.linkedin.com/in/nazmul-sujon-39647b244/"
+            >
+              <FaLinkedinIn className="text-info fw-bold  fs-3"></FaLinkedinIn>
             </a>
-            <a href="https://github.com/nazmul68">
-              <FaGithub className="text-dark fw-bold mx-2 fs-4"></FaGithub>
+            <a className="mx-3" href="https://github.com/nazmul68">
+              <FaGithub className="text-info fw-bold  fs-3"></FaGithub>
             </a>
-            <a href="https://api.whatsapp.com/send/?phone=01776097768">
-              <FaWhatsapp className="text-dark fw-bold mx-2 fs-4"></FaWhatsapp>
+            <a
+              className="mx-3"
+              href="https://api.whatsapp.com/send/?phone=01776097768"
+            >
+              <FaWhatsapp className="text-info fw-bold  fs-3"></FaWhatsapp>
             </a>
-            <a href="https://www.instagram.com/nazmul_sujon/">
-              <FaInstagram className="text-dark fw-bold mx-2 fs-4"></FaInstagram>
+            <a className="mx-3" href="https://www.instagram.com/nazmul_sujon/">
+              <FaInstagram className="text-info fw-bold  fs-3"></FaInstagram>
             </a>
           </div>
         </div>
