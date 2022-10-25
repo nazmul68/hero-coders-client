@@ -1,10 +1,17 @@
 import React from "react";
+import { useState } from "react";
+import { Button } from "react-bootstrap";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { Link, NavLink } from "react-router-dom";
 
 const Header = () => {
+  const [theme, setTheme] = useState(false);
+
+  const toggleTheme = () => {
+    setTheme(!theme);
+  };
   return (
     <section className="text-center">
       <Navbar
@@ -27,6 +34,15 @@ const Header = () => {
               HeroCoders
             </Link>
           </Navbar.Brand>
+          {/* only for mobile view start */}
+          <Button
+            variant={theme ? "light" : "dark"}
+            onClick={toggleTheme}
+            className="rounded-5 border border-3 ms-2  d-md-none"
+          >
+            {theme ? "light" : "dark"}
+          </Button>
+          {/* only for mobile view end */}
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto ps-md-5 ">
@@ -73,8 +89,15 @@ const Header = () => {
             </Nav>
             <Nav>
               <NavLink>More deets</NavLink>
-              <NavLink eventKey={2}>Dank memes</NavLink>
+              <NavLink>Dank memes</NavLink>
             </Nav>
+            <Button
+              variant={theme ? "light" : "dark"}
+              onClick={toggleTheme}
+              className="rounded-5 fw-bold border border-3 ms-2 d-none d-md-block"
+            >
+              {theme ? "light" : "dark"}
+            </Button>
           </Navbar.Collapse>
         </Container>
       </Navbar>
