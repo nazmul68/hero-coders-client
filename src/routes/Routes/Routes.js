@@ -2,11 +2,13 @@ import { createBrowserRouter } from "react-router-dom";
 import Main from "../../layouts/Main";
 import About from "../../pages/About/About";
 import Blog from "../../pages/Blog/Blog";
-import Course from "../../pages/Course/Course";
+import CourseDetails from "../../pages/CourseDetails/CourseDetails";
 import Courses from "../../pages/Courses/Courses";
 import ErrorPage from "../../pages/ErrorPage/ErrorPage";
 import FAQ from "../../pages/FAQ/FAQ";
 import Home from "../../pages/Home/Home";
+import Login from "../../pages/Login/Login";
+import Register from "../../pages/Register/Register";
 
 export const routes = createBrowserRouter([
   {
@@ -19,19 +21,26 @@ export const routes = createBrowserRouter([
         element: <Home></Home>,
       },
       {
+        path: "/home",
+        element: <Home></Home>,
+        loader: async () => {
+          return fetch(`http://localhost:5000/courses`);
+        },
+      },
+      {
         path: "/courses",
         element: <Courses></Courses>,
         loader: async () => {
           return fetch(`http://localhost:5000/courses`);
         },
       },
-      //   {
-      //     path: "/course/:id",
-      //     element: <Course></Course>,
-      //     loader: async ({ params }) => {
-      //       return fetch(`http://localhost:5000/courses/${params.id}`);
-      //     },
-      //   },
+      {
+        path: "/course/:id",
+        element: <CourseDetails></CourseDetails>,
+        loader: async ({ params }) => {
+          return fetch(`http://localhost:5000/courses/${params.id}`);
+        },
+      },
       {
         path: "/about",
         element: <About></About>,
@@ -43,6 +52,14 @@ export const routes = createBrowserRouter([
       {
         path: "/blog",
         element: <Blog></Blog>,
+      },
+      {
+        path: "/login",
+        element: <Login></Login>,
+      },
+      {
+        path: "/register",
+        element: <Register></Register>,
       },
     ],
   },

@@ -1,6 +1,7 @@
 import React from "react";
 import Carousel from "react-bootstrap/Carousel";
 import About from "../About/About";
+import Courses from "../Courses/Courses";
 
 const Home = () => {
   return (
@@ -33,6 +34,9 @@ const Home = () => {
       </Carousel>
       <div>
         <About></About>
+      </div>
+      <div>
+        <Courses></Courses>
       </div>
     </div>
   );

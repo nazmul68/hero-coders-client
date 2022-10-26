@@ -52,6 +52,16 @@ const Header = () => {
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto ps-md-5 ">
               <NavLink
+                to="/home"
+                className={({ isActive }) =>
+                  isActive
+                    ? "text-info  border-bottom border-info text-decoration-none fw-semibold mx-3 "
+                    : "text-dark text-decoration-none fw-semibold mx-3"
+                }
+              >
+                HOME
+              </NavLink>
+              <NavLink
                 to="/courses"
                 className={({ isActive }) =>
                   isActive
@@ -93,8 +103,8 @@ const Header = () => {
               </NavLink>
             </Nav>
             <Nav>
-              <NavLink>More deets</NavLink>
-              <NavLink>Dank memes</NavLink>
+              <NavLink to="/login">Login</NavLink>
+              <NavLink to="register">Register</NavLink>
             </Nav>
             <Button
               variant={theme ? "light" : "dark"}

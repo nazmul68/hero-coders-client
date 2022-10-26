@@ -47,67 +47,64 @@ const Footer = () => {
           </div>
         </div>
         <div className="about-us border-bottom border-2 ">
-          {/* only visible on mobile part start */}
-          <section className="text-center my-3 h-100 d-md-none">
-            <Link
-              to="/"
-              className="text-decoration-none fw-bold text-dark fs-3"
-            >
-              <img
-                src="https://i.ibb.co/w4ZYc0V/HC-logo.png"
-                width="50"
-                height="50"
-                className="d-inline-block"
-                alt=""
-              />
-              HeroCoders
-            </Link>
-          </section>
-          {/* only visible on mobile part end */}
           <Row>
-            <Col className="text-center my-auto h-100 d-none d-md-block">
-              <Link
-                to="/"
-                className="text-decoration-none fw-bold text-dark fs-3"
-              >
-                <img
-                  src="https://i.ibb.co/w4ZYc0V/HC-logo.png"
-                  width="50"
-                  height="50"
-                  className="d-inline-block align-top"
-                  alt=""
-                />
-                HeroCoders
-              </Link>
-            </Col>
-            {/* courses section start */}
             <Col className="mt-3 text-center">
-              <Link
-                to="/courses"
-                className=" text-decoration-none fw-bold text-dark  text-center "
-              >
-                COURSES
-              </Link>
-              <p>course 1</p>
-              <p>course 1</p>
-              <p>course 1</p>
-              <p>course 1</p>
-              <p>course 1</p>
-              <p>course 1</p>
+              <div className="mb-3">
+                <Link
+                  to="/"
+                  className="text-decoration-none fw-bold text-dark fs-3"
+                >
+                  <img
+                    src="https://i.ibb.co/w4ZYc0V/HC-logo.png"
+                    width="50"
+                    height="50"
+                    className="d-inline-block align-top"
+                    alt=""
+                  />
+                  HeroCoders
+                </Link>
+              </div>
+              <div className="mb-3">
+                <Link
+                  to="/about"
+                  className=" text-decoration-none fw-semibold text-dark"
+                >
+                  ABOUT
+                </Link>
+              </div>
+              <div className="mb-3">
+                <Link
+                  to="/courses"
+                  className=" text-decoration-none fw-semibold text-dark  text-center "
+                >
+                  COURSES
+                </Link>
+              </div>
+              <div className="mb-3">
+                <Link
+                  to="/blog"
+                  className=" text-decoration-none fw-semibold text-dark  text-center "
+                >
+                  BLOG
+                </Link>
+              </div>
+              <div>
+                <Link
+                  to="/faq"
+                  className=" text-decoration-none fw-semibold text-dark  text-center "
+                >
+                  FAQ
+                </Link>
+              </div>
             </Col>
 
             {/* more about section start */}
             <Col className="mt-3">
-              <div className="text-center">
-                <Link
-                  to="/about"
-                  className=" text-decoration-none fw-bold text-dark"
-                >
-                  MORE ABOUT
-                </Link>
-              </div>
               <section className="d-flex justify-content-center">
                 <div>
+                  <div>
+                    <h4>CONTACT US</h4>
+                  </div>
                   <div className="d-flex align-items-center mt-2">
                     <p className="me-2 fs-4 text-seondary">
                       <FaMapMarkerAlt />
