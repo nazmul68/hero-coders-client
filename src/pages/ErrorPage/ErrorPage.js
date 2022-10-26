@@ -25,7 +25,7 @@ const ErrorPage = () => {
         </p>
       </div>
 
-      <Link className="text-primary" to={"/"}>
+      <Link className="text-primary" to={"/home"}>
         Please Go Back Home
       </Link>
     </div>

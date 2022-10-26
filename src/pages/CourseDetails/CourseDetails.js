@@ -2,13 +2,28 @@ import React from "react";
 import "./CourseDetails.css";
 import { Button, Card } from "react-bootstrap";
 import { FaDownload } from "react-icons/fa";
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, useLoaderData, useNavigate } from "react-router-dom";
 
 const CourseDetails = () => {
   const courseDetails = useLoaderData();
-  const { img, name, description, topics, duration, total_class, fees } =
-    courseDetails;
+  const navigate = useNavigate();
+
+  // const ref = React.createRef();
+  const {
+    id,
+    img,
+    name,
+    description,
+    topics,
+    duration,
+    total_class,
+    projects,
+  } = courseDetails;
   const [topic1, topic2, topic3, topic4, topic5, topic6] = topics;
+
+  const handleNavigate = () => {
+    navigate(`/courseDetails/${id}`);
+  };
   return (
     <div className="d-flex justify-content-center">
       <div className="course-details">
@@ -37,7 +52,7 @@ const CourseDetails = () => {
                   Classes: <span className="text-danger">{total_class}</span>
                 </h5>
                 <h5 className="me-3">
-                  Fees: <span className="text-danger">{fees}</span>
+                  Projects: <span className="text-danger">{projects}</span>
                 </h5>
               </div>
               <div className="mt-3">
@@ -52,8 +67,12 @@ const CourseDetails = () => {
                 </ul>
               </div>
               <div className="text-center mt-4">
-                <Button variant="primary" className="w-100">
-                  Go to checkout
+                <Button
+                  onClick={handleNavigate}
+                  variant="primary"
+                  className="w-100"
+                >
+                  Get premium access
                 </Button>
               </div>
             </Card.Body>

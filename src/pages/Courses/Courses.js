@@ -5,7 +5,7 @@ import Course from "../Course/Course";
 
 const Courses = () => {
   const courses = useLoaderData();
-  console.log(courses);
+  // console.log(courses);
   return (
     <div>
       <h2 className="text-center fw-bold my-4">Our All Courses</h2>
