@@ -6,8 +6,12 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { Link, NavLink } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
 
 const Header = () => {
+  const { user } = useContext(AuthContext);
+  // console.log(user);
   const [theme, setTheme] = useState(false);
 
   const toggleTheme = () => {
@@ -96,15 +100,33 @@ const Header = () => {
                 className={({ isActive }) =>
                   isActive
                     ? "text-info  border-bottom border-info text-decoration-none fw-semibold mx-3"
-                    : "text-dark text-decoration-none fw-semibold mx-3"
+                    : "text-dark  text-decoration-none fw-semibold mx-3"
                 }
               >
                 BLOG
               </NavLink>
             </Nav>
             <Nav>
-              <NavLink to="/login">Login</NavLink>
-              <NavLink to="register">Register</NavLink>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive
+                    ? "text-info  border-bottom border-info text-decoration-none fw-semibold mx-3"
+                    : "text-dark  text-decoration-none fw-semibold mx-3"
+                }
+                to="/login"
+              >
+                Login
+              </NavLink>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive
+                    ? "text-info  border-bottom border-info text-decoration-none fw-semibold mx-3"
+                    : "text-dark  text-decoration-none fw-semibold mx-3"
+                }
+                to="register"
+              >
+                Register
+              </NavLink>
             </Nav>
             <Button
               variant={theme ? "light" : "dark"}
