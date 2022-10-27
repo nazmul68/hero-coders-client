@@ -1,12 +1,16 @@
 import React, { useContext, useState } from "react";
 import "./Register.css";
-import { Button, Container, Form } from "react-bootstrap";
+import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
+import { FaGithub, FaGoogle } from "react-icons/fa";
+
+//
 
 const Register = () => {
   const [error, setError] = useState("");
-  const { createUser } = useContext(AuthContext);
+  const { createUser, googleSignIn, gitgubSignIn, updateUserProfile } =
+    useContext(AuthContext);
 
   const handleRegister = (event) => {
     event.preventDefault();
@@ -23,6 +27,7 @@ const Register = () => {
         console.log(user);
         form.reset();
         setError("");
+        handleUpdateUserProfile(name, photoURL);
       })
       .catch((err) => {
         console.error(err);
@@ -30,24 +35,49 @@ const Register = () => {
       });
   };
 
+  const handleUpdateUserProfile = (name, photoURL) => {
+    const profile = {
+      displayName: name,
+      photoURL: photoURL,
+    };
+    updateUserProfile(profile)
+      .then(() => {})
+      .catch((err) => setError(err.message));
+  };
+
+  const handleGoogleSignIn = () => {
+    googleSignIn()
+      .then((res) => {
+        const user = res.user;
+        console.log(user);
+        setError("");
+      })
+      .catch((err) => setError(err.message));
+  };
+
+  const handleGithubSignIn = () => {
+    gitgubSignIn()
+      .then((res) => {
+        const user = res.user;
+        console.log(user);
+        setError("");
+      })
+      .catch((err) => setError(err.message));
+  };
+
   return (
     <Container>
       <div className="shadow px-3 py-4 my-5 rounded form-width mx-auto">
         <h4 className="text-dark text-center">Please Register Now</h4>
         <Form onSubmit={handleRegister}>
-          <Form.Group className="mb-3" controlId="formBasicEmail">
+          <Form.Group className="mb-3" controlId="formBasicName">
             <Form.Label>FullName</Form.Label>
             <Form.Control type="text" name="name" placeholder="Enter name" />
           </Form.Group>
 
-          <Form.Group className="mb-3" controlId="formBasicEmail">
+          <Form.Group className="mb-3" controlId="formBasicURL">
             <Form.Label>PhotoURL</Form.Label>
-            <Form.Control
-              type="text"
-              name="photoURL"
-              placeholder="photoURL"
-              required
-            />
+            <Form.Control type="text" name="photoURL" placeholder="photoURL" />
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -70,9 +100,7 @@ const Register = () => {
             />
           </Form.Group>
           <Form.Group className="mb-3">
-            <Form.Text className="text-muted">
-              We'll never share your email with anyone else.
-            </Form.Text>
+            <Form.Text className="text-danger">{error ? error : ""}</Form.Text>
           </Form.Group>
 
           <Button
@@ -83,12 +111,37 @@ const Register = () => {
             Submit
           </Button>
           <p>
-            Already have an account ? please{" "}
+            Already on HeroCoders? please{" "}
             <Link to="/login" className="text-decoration-none">
               Login
             </Link>
           </p>
         </Form>
+        <Row className="mt-4">
+          <Col md={5}>
+            <Button
+              onClick={handleGoogleSignIn}
+              className="fw-semibold px-2"
+              variant="outline-primary"
+            >
+              <FaGoogle className="me-5 fw-semibold fs-5" />
+              <span>Continue with Google </span>
+            </Button>
+          </Col>
+          <Col md={2} className=" ">
+            <p className="fw-semibold px-2 mt-2 ms-3">or</p>
+          </Col>
+          <Col md={5} className=" ">
+            <Button
+              onClick={handleGithubSignIn}
+              className="fw-semibold px-2"
+              variant="outline-primary"
+            >
+              <FaGithub className="me-5 fw-semibold fs-5" />
+              <span>Continue with Github </span>
+            </Button>
+          </Col>
+        </Row>
       </div>
     </Container>
   );

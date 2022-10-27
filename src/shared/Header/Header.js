@@ -1,18 +1,29 @@
 import React from "react";
+import "./Header.css";
 import { useState } from "react";
 import Swal from "sweetalert2";
-import { Button } from "react-bootstrap";
+import { Button, OverlayTrigger, Tooltip } from "react-bootstrap";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { Link, NavLink } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
+import { FaUserCircle } from "react-icons/fa";
 
 const Header = () => {
-  const { user } = useContext(AuthContext);
-  // console.log(user);
+  const { user, logOut } = useContext(AuthContext);
+  const userImg = user?.photoURL;
+  console.log(user);
   const [theme, setTheme] = useState(false);
+
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {
+        console.log("log out successful");
+      })
+      .catch((err) => console.error(err));
+  };
 
   const toggleTheme = () => {
     Swal.fire("We will add this feature soon...");
@@ -51,6 +62,29 @@ const Header = () => {
           >
             {theme ? "light" : "dark"}
           </Button>
+          <nav className=" d-md-none">
+            {user ? (
+              <OverlayTrigger
+                key="bottom"
+                placement="bottom"
+                overlay={
+                  <Tooltip id="tooltip-bottom">{user.displayName}</Tooltip>
+                }
+              >
+                <img
+                  src={userImg}
+                  width="30"
+                  height="30"
+                  className="d-inline-block align-top rounded-circle"
+                  alt="userimage"
+                />
+              </OverlayTrigger>
+            ) : (
+              <div>
+                <FaUserCircle className="fs-2" />
+              </div>
+            )}
+          </nav>
           {/* only for mobile view end */}
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
@@ -107,34 +141,71 @@ const Header = () => {
               </NavLink>
             </Nav>
             <Nav>
-              <NavLink
-                className={({ isActive }) =>
-                  isActive
-                    ? "text-info  border-bottom border-info text-decoration-none fw-semibold mx-3"
-                    : "text-dark  text-decoration-none fw-semibold mx-3"
-                }
-                to="/login"
-              >
-                Login
-              </NavLink>
-              <NavLink
-                className={({ isActive }) =>
-                  isActive
-                    ? "text-info  border-bottom border-info text-decoration-none fw-semibold mx-3"
-                    : "text-dark  text-decoration-none fw-semibold mx-3"
-                }
-                to="register"
-              >
-                Register
-              </NavLink>
+              {user?.uid ? (
+                <>
+                  <Button
+                    className="text-decoration-none fw-semibold mx-3"
+                    onClick={handleLogOut}
+                    variant="outline-secondary"
+                  >
+                    Log out
+                  </Button>
+                </>
+              ) : (
+                <>
+                  <NavLink
+                    className={({ isActive }) =>
+                      isActive
+                        ? "text-info  border-bottom border-info text-decoration-none fw-semibold mx-3"
+                        : "text-dark  text-decoration-none fw-semibold mx-3"
+                    }
+                    to="/login"
+                  >
+                    Login
+                  </NavLink>
+                  <NavLink
+                    className={({ isActive }) =>
+                      isActive
+                        ? "text-info  border-bottom border-info text-decoration-none fw-semibold mx-3"
+                        : "text-dark  text-decoration-none fw-semibold mx-3"
+                    }
+                    to="register"
+                  >
+                    Register
+                  </NavLink>
+                </>
+              )}
             </Nav>
             <Button
               variant={theme ? "light" : "dark"}
               onClick={toggleTheme}
-              className="rounded-5 fw-bold border border-3 ms-2 d-none d-md-block"
+              className="rounded-5 fw-semibold border border-3 mx-5 d-none d-md-block"
             >
               {theme ? "light" : "dark"}
             </Button>
+            <nav className="d-none d-md-block">
+              {user ? (
+                <OverlayTrigger
+                  key="bottom"
+                  placement="bottom"
+                  overlay={
+                    <Tooltip id="tooltip-bottom">{user.displayName}</Tooltip>
+                  }
+                >
+                  <img
+                    src={userImg}
+                    width="40"
+                    height="40"
+                    className="d-inline-block align-top rounded-circle"
+                    alt="userImage"
+                  />
+                </OverlayTrigger>
+              ) : (
+                <div>
+                  <FaUserCircle className="fs-2" />
+                </div>
+              )}
+            </nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>

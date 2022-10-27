@@ -10,6 +10,7 @@ import FAQ from "../../pages/FAQ/FAQ";
 import Home from "../../pages/Home/Home";
 import Login from "../../pages/Login/Login";
 import Register from "../../pages/Register/Register";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 export const routes = createBrowserRouter([
   {
@@ -21,35 +22,49 @@ export const routes = createBrowserRouter([
         path: "/",
         element: <Home></Home>,
         loader: async () => {
-          return fetch(`http://localhost:5000/courses`);
+          return fetch(
+            `https://hero-coders-assignment-10-server.vercel.app/courses`
+          );
         },
       },
       {
         path: "/home",
         element: <Home></Home>,
         loader: async () => {
-          return fetch(`http://localhost:5000/courses`);
+          return fetch(
+            `https://hero-coders-assignment-10-server.vercel.app/courses`
+          );
         },
       },
       {
         path: "/courses",
         element: <Courses></Courses>,
         loader: async () => {
-          return fetch(`http://localhost:5000/courses`);
+          return fetch(
+            `https://hero-coders-assignment-10-server.vercel.app/courses`
+          );
         },
       },
       {
         path: "/course/:id",
         element: <CourseDetails></CourseDetails>,
         loader: async ({ params }) => {
-          return fetch(`http://localhost:5000/courses/${params.id}`);
+          return fetch(
+            `https://hero-coders-assignment-10-server.vercel.app/courses/${params.id}`
+          );
         },
       },
       {
         path: "/courseDetails/:id",
-        element: <CheckoutPage></CheckoutPage>,
+        element: (
+          <PrivateRoute>
+            <CheckoutPage></CheckoutPage>
+          </PrivateRoute>
+        ),
         loader: async ({ params }) => {
-          return fetch(`http://localhost:5000/courses/${params.id}`);
+          return fetch(
+            `https://hero-coders-assignment-10-server.vercel.app/courses/${params.id}`
+          );
         },
       },
       {
