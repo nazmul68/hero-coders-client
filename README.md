@@ -1,70 +1,33 @@
-# Getting Started with Create React App
+### Project Name
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+HeroCoders
 
-## Available Scripts
+### Visit This Site
 
-In the project directory, you can run:
+live site: (https://hero-coders-auth.firebaseapp.com/)
 
-### `yarn start`
+### Features of this site
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+\* Some important features added on this site like #Courses, #Blogs, #FAQ,A fancy #ErrorPage etc. And also has A fancy look #Navbar & complex #footer as well.\_
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+\* You can see #courseDetails page , this page has details information about your desired course. So feel free to checkout (https://hero-coders-auth.firebaseapp.com/courses)!\_
 
-### `yarn test`
+\* #Blog page is decorated with some important & relevant questions about some inportant topics according to our courses. So feel free to checkout (https://hero-coders-auth.firebaseapp.com/blog) !\_
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+\* #FAQ page has some important questions with answers these are taken from our site visitors & new learners and these questions' solution are given by our expert mentors. You might find your desired questions with answers.. So feel free to checkout (https://hero-coders-auth.firebaseapp.com/faq)!\_
 
-### `yarn build`
+\* We also try to add some new features for our visitors || learners . Stay connected with us !\_
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Functionality
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+\* First of all, HeroCoders looks much fancy & fully responsive on desktop, tab & mobile view.\_
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+\* All courses data & information are loaded dynamically on (https://hero-coders-assignment-10-server.vercel.app/courses) this (server) side.\_
 
-### `yarn eject`
+\* HeroCoders has 3 types of login systems Email & password login, Google, and GitHub login. The login page has a toggle option to go to the register page.\_
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+\* HeroCoders has some private/protected route wheras the user cannot enter without registration.And ensuring that the private route redirects to the login page.\_
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### technologies
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+\* React & React router dom.\_ \* React Bootstrap & Components.\_ \* Firebase authentication & hosting.\_ \* Varcel hosting for server side.\_ \* React Icons.\_ \* Sweet alert.\_ \* React pdf package etc.\_

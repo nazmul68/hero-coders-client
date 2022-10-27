@@ -22,15 +22,13 @@ const Login = () => {
     signIn(email, password)
       .then((res) => {
         const user = res.user;
-        console.log(user);
+        // console.log(user);
         form.reset();
         setError("");
         navigate(from, { replace: true });
       })
       .catch((err) => {
         console.error(err);
-        // const errMessage = err.message;
-        // setError(errMessage);
         setError(err.message);
       });
     setError("");

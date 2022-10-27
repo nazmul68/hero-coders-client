@@ -12,7 +12,7 @@ const CheckoutPage = () => {
   const userImg = user.photoURL;
 
   const handleProceed = () => {
-    Swal.fire("Paymet integration coming soon!");
+    Swal.fire("Congratuilations & Welcome to this Course.");
   };
 
   return (

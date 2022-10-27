@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import "./Register.css";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
 import { FaGithub, FaGoogle } from "react-icons/fa";
 
@@ -11,6 +11,7 @@ const Register = () => {
   const [error, setError] = useState("");
   const { createUser, googleSignIn, gitgubSignIn, updateUserProfile } =
     useContext(AuthContext);
+  const navigate = useNavigate();
 
   const handleRegister = (event) => {
     event.preventDefault();
@@ -24,13 +25,14 @@ const Register = () => {
     createUser(email, password)
       .then((res) => {
         const user = res.user;
-        console.log(user);
+        // console.log(user);
         form.reset();
         setError("");
+        navigate("/login");
         handleUpdateUserProfile(name, photoURL);
       })
       .catch((err) => {
-        console.error(err);
+        // console.error(err);
         setError(err.message);
       });
   };
