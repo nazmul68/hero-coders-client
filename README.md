@@ -10,15 +10,11 @@ live site: (https://hero-coders-auth.firebaseapp.com/)
 
 \* First of all, HeroCoders looks much fancy & fully responsive on desktop, tab & mobile view.
 
-\* Some important features added on this site like #Courses, #Blogs, #FAQ,A fancy #ErrorPage etc. And also has A fancy look #Navbar & complex #footer as well.
+\* Some important features added on this site like Courses, Blogs, FAQ,A fancy ErrorPage etc. And also has A fancy look Navbar & complex Footer as well.
 
-\* You can see #courseDetails page , this page has details information about your desired course. So feel free to checkout (https://hero-coders-auth.firebaseapp.com/courses)
+\* You can see CourseDetails page , this page has details information about your desired course. So feel free to checkout (https://hero-coders-auth.firebaseapp.com/courses)
 
-\* #Blog page is decorated with some important & relevant questions about some inportant topics according to our courses. So feel free to checkout (https://hero-coders-auth.firebaseapp.com/blog)
-
-\* #FAQ page has some important questions with answers these are taken from our site visitors & new learners and these questions' solution are given by our expert mentors. You might find your desired questions with answers.. So feel free to checkout (https://hero-coders-auth.firebaseapp.com/faq)
-
-\* We also try to add some new features for our visitors || learners . Stay connected with us !
+\* Blog page is decorated with some important & relevant questions about some inportant topics according to our courses. So feel free to checkout (https://hero-coders-auth.firebaseapp.com/blog)
 
 ### Functionality
 
